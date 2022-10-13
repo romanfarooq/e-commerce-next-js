@@ -4,7 +4,7 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 
 export default function Navbar() {
   return (
-    <nav className="flex m-2 flex-col md:flex-row md:justify-start justify-between items-center">
+    <nav className="flex p-2 flex-col md:flex-row md:justify-start justify-between items-center shadow-md">
       <div className="mx-5">
         <Link href="/">
           <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
@@ -13,16 +13,19 @@ export default function Navbar() {
           </a>
         </Link>
       </div>
-      <div className="nav">
+      <div>
         <ul className="flex py-2 space-x-5 font-bold text-lg">
           <li>
-            <Link href="/">Tshirts</Link>
+            <Link href="/tshirts">Tshirts</Link>
           </li>
           <li>
-            <Link href="/">Hoodies</Link>
+            <Link href="/hoodies">Hoodies</Link>
           </li>
           <li>
-            <Link href="/">Stickers</Link>
+            <Link href="/stickers">Stickers</Link>
+          </li>
+          <li>
+            <Link href="/mugs">Mugs</Link>
           </li>
         </ul>
       </div>

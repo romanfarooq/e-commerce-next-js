@@ -8,6 +8,7 @@ import {
   AiFillMinusCircle,
 } from 'react-icons/ai';
 import { BsFillBagCheckFill } from 'react-icons/bs';
+import { MdDeleteForever } from 'react-icons/md';
 
 export default function Navbar() {
   const cart = useRef(null);
@@ -30,6 +31,7 @@ export default function Navbar() {
           </a>
         </Link>
       </div>
+
       <div>
         <ul className="flex py-2 space-x-5 font-bold text-lg">
           <li>
@@ -53,8 +55,9 @@ export default function Navbar() {
       >
         <AiOutlineShoppingCart className="text-2xl" />
       </div>
+
       <div
-        className="fixed overflow-x-hidden overflow-y-auto top-0 right-0 h-full w-72 p-10 bg-indigo-100 transform transition-transform translate-x-full"
+        className="fixed z-10 overflow-x-hidden overflow-y-auto top-0 right-0 h-full w-80 p-10 bg-indigo-100 transform transition-transform translate-x-full"
         ref={cart}
       >
         <h2 className="font-bold text-xl text-center">Shopping Cart</h2>
@@ -78,10 +81,18 @@ export default function Navbar() {
             </div>
           </li>
         </ol>
-        <button className="flex mx-auto mt-8 text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-          <BsFillBagCheckFill className='m-1' />
-          Checkout
-        </button>
+
+        <div className="flex justify-center mt-8">
+          <button className="flex my-auto mr-5 text-white bg-indigo-500 border-0 p-3 focus:outline-none hover:bg-indigo-600 rounded text-sm">
+            <BsFillBagCheckFill className="m-1" />
+            Checkout
+          </button>   
+          <button className="flex my-auto text-white bg-indigo-500 border-0 p-3 focus:outline-none hover:bg-indigo-600 rounded text-sm">
+            <MdDeleteForever className="mt-[2px] text-lg" />
+            Clear Cart
+          </button>
+        </div>
+
       </div>
     </nav>
   );

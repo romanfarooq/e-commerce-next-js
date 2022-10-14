@@ -7,6 +7,7 @@ import {
   AiFillPlusCircle,
   AiFillMinusCircle,
 } from 'react-icons/ai';
+import { BsFillBagCheckFill } from 'react-icons/bs';
 
 export default function Navbar() {
   const cart = useRef(null);
@@ -53,7 +54,7 @@ export default function Navbar() {
         <AiOutlineShoppingCart className="text-2xl" />
       </div>
       <div
-        className="fixed top-0 right-0 h-full w-72 p-10 bg-indigo-100 transform transition-transform translate-x-full"
+        className="fixed overflow-x-hidden overflow-y-auto top-0 right-0 h-full w-72 p-10 bg-indigo-100 transform transition-transform translate-x-full"
         ref={cart}
       >
         <h2 className="font-bold text-xl text-center">Shopping Cart</h2>
@@ -77,6 +78,10 @@ export default function Navbar() {
             </div>
           </li>
         </ol>
+        <button className="flex mx-auto mt-8 text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+          <BsFillBagCheckFill className='m-1' />
+          Checkout
+        </button>
       </div>
     </nav>
   );

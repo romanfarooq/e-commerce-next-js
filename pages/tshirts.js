@@ -81,7 +81,7 @@ export default function Tshirts() {
                     <h2 className="text-gray-900 title-font text-lg font-medium">
                       {tshirt.name.charAt(0).toUpperCase() + tshirt.name.slice(1)}
                     </h2>
-                    <p className="mt-1 text-sm">${tshirt.price}</p>
+                    <p className="mt-1 text-sm">Rs {tshirt.price}</p>
                     <p className="mt-1 text-sm">S, M, L, XL, XXL</p>
                   </div>
                 </div>

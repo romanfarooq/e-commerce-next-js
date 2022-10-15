@@ -8,8 +8,18 @@ function MyApp({ Component, pageProps }) {
     {
       id: 1,
       name: 'T-Shirt',
-      quantity: 1,
+      quantity: 3,
       price: 1000,
+      size: 'M',
+      variant: 'Black',
+    },
+    {
+      id: 2,
+      name: 'Polo Shirt',
+      quantity: 4,
+      price: 500,
+      size: 'L',
+      variant: 'White',
     },
   ]);
   const [subTotal, setSubTotal] = useState(
@@ -71,7 +81,15 @@ function MyApp({ Component, pageProps }) {
         increaseQuantity={increaseQuantity}
         decreaseQuantity={decreaseQuantity}
       />
-      <Component {...pageProps} addToCart={addToCart} />
+      <Component
+        {...pageProps}
+        cart={cart}
+        subTotal={subTotal}
+        clearCart={clearCart}
+        increaseQuantity={increaseQuantity}
+        decreaseQuantity={decreaseQuantity}
+        addToCart={addToCart}
+      />
       <Footer />
     </>
   );

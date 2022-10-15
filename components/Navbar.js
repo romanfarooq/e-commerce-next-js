@@ -28,13 +28,13 @@ function Navbar({
   };
 
   return (
-    <nav className="sticky top-0 z-10 bg-white overflow-x-hidden overflow-y-auto flex p-2 flex-col md:flex-row md:justify-start justify-between products-center shadow-md">
+    <nav className="sticky top-0 z-10 bg-white overflow-x-hidden overflow-y-auto flex p-2 flex-col md:flex-row md:justify-start justify-between items-center shadow-md">
       
       <div className="mx-5">
         <Link href="/">
-          <a className="flex title-font font-medium products-center md:justify-start justify-center text-gray-900">
+          <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
             <Image src="/Ecommerce.svg" alt="logo" width={40} height={40} />
-            <span className="ml-3 text-xl my-auto text-primary">
+            <span className="ml-3 text-xl text-primary">
               E-Commerce
             </span>
           </a>
@@ -42,7 +42,7 @@ function Navbar({
       </div>
 
       <div>
-        <ul className="flex justify-center sm:justify-start py-2 space-x-5 font-bold text-lg">
+        <ul className="flex py-2 space-x-5 font-bold text-lg">
           <li>
             <Link href="/tshirts">Tshirts</Link>
           </li>
@@ -84,7 +84,7 @@ function Navbar({
                   <div className="w-2/3 font-semibold">
                     <p>{product.name}</p>
                   </div>
-                  <div className="w-1/3 font-semibold flex justify-center products-center">
+                  <div className="w-1/3 font-semibold flex">
                     <AiFillMinusCircle
                       className="text-indigo-500 m-auto cursor-pointer"
                       onClick={() => decreaseQuantity(product)}
@@ -107,13 +107,13 @@ function Navbar({
 
         <div className="flex justify-center mt-4">
           <Link href="/checkout">
-            <button className="flex my-auto mr-5 text-white bg-indigo-500 border-0 p-3 focus:outline-none hover:bg-indigo-600 rounded text-sm">
+            <button className="flex mr-5 text-white bg-indigo-500 border-0 p-3 focus:outline-none hover:bg-indigo-600 rounded text-sm">
               <BsFillBagCheckFill className="m-1" />
               Checkout
             </button>
           </Link>
           <button
-            className="flex my-auto text-white bg-indigo-500 border-0 p-3 focus:outline-none hover:bg-indigo-600 rounded text-sm"
+            className="flex text-white bg-indigo-500 border-0 p-3 focus:outline-none hover:bg-indigo-600 rounded text-sm"
             onClick={clearCart}
           >
             <MdDeleteForever className="mt-[2px] text-lg" />

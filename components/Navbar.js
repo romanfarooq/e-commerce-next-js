@@ -1,22 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRef } from 'react';
-import {
-  AiOutlineShoppingCart,
-  AiFillCloseCircle,
-  AiFillPlusCircle,
-  AiFillMinusCircle,
-} from 'react-icons/ai';
 import { BsFillBagCheckFill } from 'react-icons/bs';
 import { MdDeleteForever } from 'react-icons/md';
+import { useSelector, useDispatch } from 'react-redux';
+import { clearCart, increaseQuantity, decreaseQuantity } from '../redux/cartSlice';
+import { AiOutlineShoppingCart, AiFillCloseCircle, AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/ai';
 
-function Navbar({
-  cart,
-  subTotal,
-  clearCart,
-  increaseQuantity,
-  decreaseQuantity,
-}) {
+
+function Navbar() {
+  
   const cartRef = useRef(null);
 
   const toggleCart = () => {
@@ -27,6 +20,9 @@ function Navbar({
     }
   };
 
+  const { cart, subTotal } = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+
   return (
     <nav className="sticky top-0 z-10 bg-white overflow-x-hidden overflow-y-auto flex p-2 flex-col md:flex-row md:justify-start justify-between items-center shadow-md">
       
@@ -34,9 +30,7 @@ function Navbar({
         <Link href="/">
           <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
             <Image src="/Ecommerce.svg" alt="logo" width={40} height={40} />
-            <span className="ml-3 text-xl text-primary">
-              E-Commerce
-            </span>
+            <span className="ml-3 text-xl text-primary">E-Commerce</span>
           </a>
         </Link>
       </div>
@@ -87,12 +81,12 @@ function Navbar({
                   <div className="w-1/3 font-semibold flex">
                     <AiFillMinusCircle
                       className="text-indigo-500 m-auto cursor-pointer"
-                      onClick={() => decreaseQuantity(product)}
+                      onClick={() => dispatch(decreaseQuantity(product))}
                     />
                     <span className="mx-2">{product.quantity}</span>
                     <AiFillPlusCircle
                       className="text-indigo-500 m-auto cursor-pointer"
-                      onClick={() => increaseQuantity(product)}
+                      onClick={() => dispatch(increaseQuantity(product))}
                     />
                   </div>
                 </div>
@@ -114,12 +108,13 @@ function Navbar({
           </Link>
           <button
             className="flex text-white bg-indigo-500 border-0 p-3 focus:outline-none hover:bg-indigo-600 rounded text-sm"
-            onClick={clearCart}
+            onClick={() => dispatch(clearCart())}
           >
             <MdDeleteForever className="mt-[2px] text-lg" />
             Clear Cart
           </button>
         </div>
+        
       </div>
 
     </nav>

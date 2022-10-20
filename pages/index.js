@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import Image from 'next/image';
+import HomeImage from "../public/home.jpg";
 
 export default function Home() {
   return (
@@ -8,7 +10,7 @@ export default function Home() {
         <meta name="description" content="E-Commerce -- your own shop" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <img src="/home.jpg" alt="home-image" />
+      <Image src={HomeImage} alt="home-image" />
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Logo from "../public/Ecommerce.svg";
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
         <div className="w-64 flex-shrink-0 md:mx-0 m-auto p-0 md:px-10  text-center md:text-left">
           <Link href="/">
             <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-              <Image src="/Ecommerce.svg" alt="logo" width={40} height={40} />
+              <Image src={Logo} alt="logo" width={40} height={40} />
               <span className="ml-3 text-xl text-primary">E-Commerce</span>
             </a>
           </Link>
